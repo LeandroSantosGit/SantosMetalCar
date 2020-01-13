@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="assets/imgs/favicon.ico">
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/fontawesome.min.css">
+    <script src="assets/js/all.min.js"></script>
+    <title>Santos Metal Car</title>
+</head>
+<body>
+    <header>
+        <div class="collapse bg-dark" id="navbarHeader">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-8 col-md-7 py-4">
+                        <h4 class="text-white">Leandro Santos</h4>
+                        <p class="text-white">Cursando Graduação em Sistemas de Informação na Universidade Estácio de Sá,
+                            com Formação Técnica em Informática pela Fucapi, conhecimentos em linguagens de programação e
+                            segurança da informação.
+                        </p>
+                    </div>
+                    <div class="col-sm-4 offset-md-1 py-4">
+                        <h4 class="text-white">Contato</h4>
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="https://twitter.com/rockgolmetal" class="text-white">Twitter</a>
+                            </li>
+                            <li>
+                                <a href="https://www.facebook.com/leandro.santos.71216" class="text-white">Facebook</a>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/in/leandro-p-7811b1151/" class="text-white">Linkedin</a>
+                            </li>
+                            <li>
+                                <a href="https://github.com/LeandroSantosGit" class="text-white">GitHub</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navbar navbar-dark bg-dark">
+            <div class="container">      
+                <a class="navbar-brand align-items-center" href="index.html" data-js="company-name"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarHeader" 
+                        aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main role="main">
+        <div class="carousel slide">     
+              <img class="first-slide img-fluid" src="assets/imgs/slide.jpg" alt="Imagem Banner">
+        </div>
+        <div class="jumbotron company-form"  action="/" data-js="form-register">
+            <div class="container">
+                <h2 class="display-4 text-center">Cadastro</h2>
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6 col-sm-6">
+                            <label>Imagem do carro</label>
+                            <input type="url" class="form-control" data-js="image" placeholder="Digite a url da imagem">
+                        </div>                  
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label>Marca</label>
+                            <input type="text" class="form-control" data-js="brand" placeholder="Digite a marca">
+                        </div>
+                        <div class="form-group  col-md-4 col-sm-6">
+                            <label>Modelo</label>
+                            <input type="text" class="form-control" data-js="model" placeholder="Digite o modelo">
+                        </div>
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label>Ano</label>
+                            <input type="text" class="form-control" data-js="year" placeholder="Digite o ano">
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label>Placa</label>
+                            <input type="text" class="form-control" data-js="plate" placeholder="Digite a placa">
+                        </div>
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label>Cor</label>
+                            <input type="text" class="form-control" data-js="color" placeholder="Digite a cor">
+                        </div>
+                        <div class="form-group col-md-4 col-sm-6">
+                            <label>Quilômetragem</label>
+                            <input type="text" class="form-control" data-js="mileage" placeholder="Digite a quilômetragem">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-success">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+        <div class="jumbotron company-table">
+            <div class="container">
+                <h2 class="display-4 text-center">Carros</h2>
+                <table class="table table-striped table-responsive-sm table-responsive-md">
+                    <thead>
+                      <tr>
+                        <th scope="col">Imagem do carro</th>
+                        <th scope="col">Marca</th>
+                        <th scope="col">Modelo</th>
+                        <th scope="col">Ano</th>
+                        <th scope="col">Placa</th>
+                        <th scope="col">Cor</th>
+                        <th scope="col">Quilômetragem</th>
+                        <th scope="col">Operações</th>
+                      </tr>
+                    </thead>
+                    <tbody data-js="table-car">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>   
+
+    <footer class="footer">
+        <div class="container text-white-50">
+            <a id="page_scroller" href="#top"><i class="fa fa-chevron-up"></i></a>
+            <div class="row">
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <h4 class="text-white">Endereço</h4>
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <strong data-js="company-social-reason"></strong><br>
+                            <span data-js="company-street"></span>, <span data-js="company-number"></span><br>
+                            <span data-js="company-neighborhood"></span>, <span data-js="company-cep"></span><br>
+                            <span data-js="company-city"></span> - <span data-js="company-state"></span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <h4 class="text-white">Contato</h4>
+                    <div class="company-contact">
+                        <ul class="list-unstyled">
+                            <li>
+                                <i class="fas fa-envelope"></i><a class="text-white-50" href="mailto:" data-js="company-email"></a>
+                            </li>
+                            <li>
+                                <i class="fa fa-phone"></i><a data-js="company-phone"></a><br>
+                                <i class="fa fa-phone"></i><a data-js="company-cell"></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <h4 class="text-white">Rede Sociais</h4>
+                    <div class="company-social">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a href="#" class="facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                            </li>
+                            <li>
+                                <a href="#" class="whatsapp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+                    <h4 class="text-white">Importantes</h4>
+                    <div class="company-important">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a class="text-white-50" href="#"><i class="fab fa-contao"></i>  Termos e Condições</a>
+                            </li>
+                            <li>
+                                <a class="text-white-50" href="#"><i class="fa fa-user-secret"></i>  Política de Privacidade</a>
+                            </li>
+                            <li>
+                                <a class="text-white-50" href="#" target="_blank"><i class="fa fa-book"></i>  Manual de garantia</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-xl-12 col-lg-12">
+                    <p class="company-copyright">&copy; 2020 Santos Metal Car - Todos os direitos reservados. 
+                        Desenvolvimento Leandro Santos</p>
+                </div>
+            </div>      
+        </div>
+    </footer>
+
+    <script src="assets/js/jquery-3.3.1.slim.min.js"></script>
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <script src="app/dom.js"></script>
+    <script src="app/app.js"></script>
+</body>
+</html>

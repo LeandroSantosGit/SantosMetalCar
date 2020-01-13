@@ -1,0 +1,138 @@
+body {
+    margin-bottom: 60px;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+img {
+    max-width: 120px;
+    height: auto;
+}
+
+.company-form {
+	background-color: #F9FAFF;
+	border-radius: 0rem;
+    margin-bottom: 0rem;
+    padding: 20px;
+}
+
+.company-table {
+    margin-bottom: 30px;
+    padding: 2rem;
+    margin-bottom: 0px;
+}
+
+.removeCar {
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 0px;
+    position: absolute;
+}
+
+.removeCar:hover {
+    font-size: 20px;
+}
+
+#page_scroller {
+    background: rgb(133, 191, 235);
+    cursor: pointer;
+    color: #000;
+    padding: 10px 11px;
+    font-size: 12px;
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    border-radius: 5px;
+    height: 40px;
+    line-height: 15px;
+    width:35px;
+}
+
+footer {
+    position: absolute;
+    width: 100%;
+    padding-top: 50px;
+    background: #111;
+}
+
+.footer h4 {
+    font-size: 18px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+}
+
+.company-contact li a {
+    margin: 5px;
+}
+
+.company-social {
+    margin-top: 25px;
+}
+
+.company-social li {
+    display: inline-block;
+    font-size: 16px;
+}
+
+.company-social li a {
+    margin: 0 3px 0 0;
+    font-size: 18px;
+    width: 35px;
+    height: 35px;
+    color: #FFF;
+    border-radius: 5px;
+    display: inline-block;
+    text-align: center;
+    line-height: 34px;
+}
+
+.facebook {
+    background: #4867aa;
+    color: #FFF;
+}
+
+.twitter {
+    background: #33CCFF;
+    color: #FFF;
+}
+
+.whatsapp {
+    background: #28A745;
+    color: #FFF;
+}
+
+.instagram {
+    background: #D64316D9;
+    color: #FFF;
+}
+
+.facebook:hover {
+    background: #5777bb;
+    color: #FFF;
+}
+
+.twitter:hover {
+    background: rgb(102, 217, 255);
+    color: #FFF;
+}
+
+.whatsapp:hover {
+    background: rgb(67, 199, 98);
+    color: #FFF;
+}
+
+.instagram:hover {
+    background: rgba(235, 104, 64, 0.851);
+    color: #FFF;
+}
+
+.company-copyright {
+    padding: 20px 0;
+    border-top: solid 1px #292929;
+    text-align: center;
+    margin-bottom: 0;
+}
