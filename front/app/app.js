@@ -8,6 +8,7 @@
       init: function() {
         this.companyInfo();
         this.initEventes();
+        this.searchCars();
       },
 
       initEventes: function initEventes() {
@@ -16,18 +17,42 @@
 
       handleSubmit: function handleSubmit(e) {
         e.preventDefault();
-        $tableCar.appendChild(app.createNewCar());
-        app.clearForm();
+        var ajax = new XMLHttpRequest();
+        ajax.open('POST', 'http://localhost:3000/car');
+        ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        ajax.send(app.createPost());
+        ajax.addEventListener('readystatechange', app.handleCarPost, false);
       },
 
-      clearForm: function clearForm() {
-        $('[data-js="image"]').get().value = '';
-        $('[data-js="brand"]').get().value = '';
-        $('[data-js="model"]').get().value = '';
-        $('[data-js="year"]').get().value = '';
-        $('[data-js="plate"]').get().value = '';
-        $('[data-js="color"]').get().value = '';
-        $('[data-js="mileage"]').get().value = '';
+      handleCarPost: function handleCarPost() {
+        if (app.isReady.call(this)) {
+          console.log('Status POST:', this.responseText);
+          app.searchCars();
+        }
+      },
+
+      createPost: function createPost() {
+        return `image=$('[data-js="image"]') & brand=$('[data-js="brand"]') 
+                & model=$('[data-js="model"]')} & year=$('[data-js="year"]')} 
+                & plate=$('[data-js="plate"]')} & color=$('[data-js="color"]')}
+                & mileage=$('[data-js="mileage"]')}`;
+      },
+
+      searchCars: function searchCars() {
+        $tableCar.innerHTML = '';
+        var ajax = new XMLHttpRequest();
+        ajax.open('GET', 'http://localhost:3000/car');
+        ajax.send();
+        ajax.addEventListener('readystatechange', app.handleCarGet, false);
+      },
+
+      handleCarGet: function handleCarGet() {
+        if (app.isReady.call(this)) {
+          var parseCar = JSON.parse(this.responseText);
+          parseCar.forEach(function() {
+            $tableCar.appendChild(app.createNewCar());
+          });
+        }
       },
 
       createNewCar: function createNewCar() {
@@ -65,6 +90,16 @@
         $tr.appendChild($tdIconRemove);
 
         return $fragment.appendChild($tr);
+      },
+
+      clearForm: function clearForm() {
+        $('[data-js="image"]').get().value = '';
+        $('[data-js="brand"]').get().value = '';
+        $('[data-js="model"]').get().value = '';
+        $('[data-js="year"]').get().value = '';
+        $('[data-js="plate"]').get().value = '';
+        $('[data-js="color"]').get().value = '';
+        $('[data-js="mileage"]').get().value = '';
       },
 
       createRemoveCar: function createRemoveCar() {

@@ -11,10 +11,12 @@ router.get('/', function(req, res) {
 router.post('/', function(req, res) {
   data.push({
     image: req.body.image,
-    brandModel: req.body.brandModel,
+    brand: req.body.brand,
+    model: req.body.model,
     year: req.body.year,
     plate: req.body.plate,
-    color: req.body.color
+    color: req.body.color,
+    mileage: req.body.mileage
   });
   res.json({ message: 'success' });
 });
