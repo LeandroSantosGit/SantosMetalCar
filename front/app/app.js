@@ -32,10 +32,15 @@
       },
 
       createPost: function createPost() {
-        return `image=$('[data-js="image"]') & brand=$('[data-js="brand"]') 
-                & model=$('[data-js="model"]')} & year=$('[data-js="year"]')} 
-                & plate=$('[data-js="plate"]')} & color=$('[data-js="color"]')}
-                & mileage=$('[data-js="mileage"]')}`;
+        var stringCar = `image=${this.getInputValue('image')}
+                &brand=${this.getInputValue('brand')}
+                &model=${this.getInputValue('model')}
+                &year=${this.getInputValue('year')}
+                &plate=${this.getInputValue('plate')}
+                &color=${this.getInputValue('color')}
+                &mileage=${this.getInputValue('mileage')}`;
+            this.clearForm();
+            return stringCar;
       },
 
       searchCars: function searchCars() {
@@ -49,13 +54,13 @@
       handleCarGet: function handleCarGet() {
         if (app.isReady.call(this)) {
           var parseCar = JSON.parse(this.responseText);
-          parseCar.forEach(function() {
-            $tableCar.appendChild(app.createNewCar());
+          parseCar.forEach(function(car) {
+            $tableCar.appendChild(app.createNewCar(car));
           });
         }
       },
 
-      createNewCar: function createNewCar() {
+      createNewCar: function createNewCar(car) {
         var $fragment = doc.createDocumentFragment();
         var $tr = doc.createElement('tr');
         var $tdImage = doc.createElement('td');
@@ -65,19 +70,15 @@
         var $tdPlate = doc.createElement('td');
         var $tdColor = doc.createElement('td');
         var $tdMileage = doc.createElement('td');
-        var $image = doc.createElement('img');
         var $tdIconRemove = doc.createElement('td');
         
-
-        $image.setAttribute('src', $('[data-js="image"]').get().value);
-        $tdImage.appendChild($image);
-
-        $tdBrand.textContent = $('[data-js="brand"]').get().value;
-        $tdModel.textContent = $('[data-js="model"]').get().value;
-        $tdYear.textContent = $('[data-js="year"]').get().value;
-        $tdPlate.textContent = $('[data-js="plate"]').get().value;
-        $tdColor.textContent = $('[data-js="color"]').get().value;
-        $tdMileage.textContent = $('[data-js="mileage"]').get().value;
+        $tdImage.appendChild(this.createImage(car.image));
+        $tdBrand.textContent = car.brand;
+        $tdModel.textContent = car.model;
+        $tdYear.textContent = car.year;
+        $tdPlate.textContent = car.plate;
+        $tdColor.textContent = car.color;
+        $tdMileage.textContent = car.mileage;
         $tdIconRemove.appendChild(this.createRemoveCar());
 
         $tr.appendChild($tdImage);
@@ -92,14 +93,20 @@
         return $fragment.appendChild($tr);
       },
 
+      createImage: function createImage(url) {
+        var $image = doc.createElement('img');
+        $image.src = url;
+        return $image;
+      },
+
+      getInputValue: function getInputValue(value) {
+        return $(`[data-js="${value}"]`).get().value;
+      },
+
       clearForm: function clearForm() {
-        $('[data-js="image"]').get().value = '';
-        $('[data-js="brand"]').get().value = '';
-        $('[data-js="model"]').get().value = '';
-        $('[data-js="year"]').get().value = '';
-        $('[data-js="plate"]').get().value = '';
-        $('[data-js="color"]').get().value = '';
-        $('[data-js="mileage"]').get().value = '';
+        $('input').forEach(function(item) {
+          item.value='';
+        });
       },
 
       createRemoveCar: function createRemoveCar() {
