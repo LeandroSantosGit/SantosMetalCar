@@ -11,7 +11,7 @@ O projeto visa construir uma aplicação na prática utilizando Javascript como 
 ## Web
 Na aplicação o cliente poderá inserir o veículo preenchendo os campos na área de `Cadastro`, os veículos cadastrados são listados logo abaixo na área de `Carros`, podendo ser excluído.
 
-<img src=".github/Web.png" alt="Página Santos Metal Car" align="center">
+<img src=".github/web.png" alt="Página Santos Metal Car" align="center">
 
 ## Tecnologias
 
