@@ -1,5 +1,6 @@
 body {
     margin-bottom: 60px;
+    padding-top: 3.5rem;
 }
 
 html {
@@ -30,7 +31,7 @@ img {
     font-size: 18px;
     border-radius: 5px;
     border: 0px;
-    position: absolute;
+    position: relative;
 }
 
 .removeCar:hover {
@@ -38,9 +39,9 @@ img {
 }
 
 #page_scroller {
-    background: rgb(133, 191, 235);
+    background: #4e5760;
     cursor: pointer;
-    color: #000;
+    color: #FFF;
     padding: 10px 11px;
     font-size: 12px;
     position: fixed;

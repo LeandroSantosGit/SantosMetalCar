@@ -16,7 +16,8 @@ router.post('/', function(req, res) {
     year: req.body.year,
     plate: req.body.plate,
     color: req.body.color,
-    mileage: req.body.mileage
+    mileage: req.body.mileage,
+    price: req.body.price
   });
   res.json({ message: 'success' });
 });

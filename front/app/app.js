@@ -21,12 +21,12 @@
         ajax.open('POST', 'http://localhost:3000/car');
         ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         ajax.send(app.createPost());
-        ajax.addEventListener('readystatechange', app.handleCarPost, false);
+        ajax.addEventListener('readystatechange', app.handleCarAjax, false);
       },
 
-      handleCarPost: function handleCarPost() {
+      handleCarAjax: function handleCarAjax() {
         if (app.isReady.call(this)) {
-          console.log('Status POST:', this.responseText);
+          console.log('Status POST:', JSON.parse(this.responseText).message);
           app.searchCars();
         }
       },
@@ -34,13 +34,22 @@
       createPost: function createPost() {
         var stringCar = `image=${this.getInputValue('image')}
                 &brand=${this.getInputValue('brand')}
+                &price=${this.abbreviatedPrice() + this.getInputValue('price')}
                 &model=${this.getInputValue('model')}
                 &year=${this.getInputValue('year')}
                 &plate=${this.getInputValue('plate')}
                 &color=${this.getInputValue('color')}
-                &mileage=${this.getInputValue('mileage')}`;
+                &mileage=${this.getInputValue('mileage') + this.abbreviatedMileage()}`;
             this.clearForm();
             return stringCar;
+      },
+
+      abbreviatedMileage: function abbreviatedMileage() {
+        return " KM";
+      },
+
+      abbreviatedPrice: function abbreviatedPrice() {
+        return "R$ ";
       },
 
       searchCars: function searchCars() {
@@ -64,6 +73,7 @@
         var $fragment = doc.createDocumentFragment();
         var $tr = doc.createElement('tr');
         var $tdImage = doc.createElement('td');
+        var $tdPrice = doc.createElement('td');
         var $tdBrand = doc.createElement('td');
         var $tdModel = doc.createElement('td');
         var $tdYear = doc.createElement('td');
@@ -74,6 +84,7 @@
         
         $tdImage.appendChild(this.createImage(car.image));
         $tdBrand.textContent = car.brand;
+        $tdPrice.textContent = car.price;
         $tdModel.textContent = car.model;
         $tdYear.textContent = car.year;
         $tdPlate.textContent = car.plate;
@@ -82,6 +93,7 @@
         $tdIconRemove.appendChild(this.createRemoveCar());
 
         $tr.appendChild($tdImage);
+        $tr.appendChild($tdPrice);
         $tr.appendChild($tdBrand);
         $tr.appendChild($tdModel);
         $tr.appendChild($tdYear);
@@ -119,9 +131,12 @@
         return $buttonRemove;
       },
 
-      handleRemove: function handleRemove(e) {
-        var $trRemoveCar = this.parentNode.parentNode;
-        $tableCar.removeChild($trRemoveCar);
+      handleRemove: function handleRemove(car) {
+        var ajax = new XMLHttpRequest();
+        ajax.open('DELETE', 'http://localhost:3000/car');
+        ajax.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        ajax.send(`plate=${this.parentNode.parentNode.children[5].textContent}`);
+        ajax.addEventListener('readystatechange', app.handleCarAjax, false);
       },
 
       companyInfo: function companyInfo() {
