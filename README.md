@@ -4,12 +4,14 @@
 
 ## Projeto
 
-Santos Metal Car é um projeto que visa conectar clientes que buscam disponibilizar seus veículos para venda em plataforma online, cadastrando informações de seu automóvel, e conectando clientes que procuram obter informações de veiculos como imagem e preço com maior facilidade e acessibilidade, facilitando comprar e venda.
+Santos Metal Car é um projeto que visa conectar clientes que buscam disponibilizar seus veículos para venda em plataforma online, cadastrando informações de seu automóvel e conectando clientes que procuram obter informações de veiculos como imagem e preço com maior facilidade e acessibilidade, facilitando compra e venda.
 
-O projeto visa construir uma aplicação na prática utilizando Javascript como pricipal ferramenta, e Bootstrap focando resposividade. O projeto foi desenvolvido no final do Curso [Javascript Ninja](https://blog.da2k.com.br/curso-javascript-ninja/), colocam em prática todo o conhecimento adquirido no curso e um pouco a mais. Repositório do Curso [Javascript Ninja](https://github.com/LeandroSantosGit/curso-javascript-ninja).
+O projeto visa construir uma aplicação na prática,utilizando Javascript como pricipal ferramenta e Bootstrap focando responsividade.
+
+O projeto foi desenvolvido no final do Curso [Javascript Ninja](https://blog.da2k.com.br/curso-javascript-ninja/), colocam em prática todo o conhecimento adquirido no curso e um pouco a mais. Repositório do Curso [Javascript Ninja](https://github.com/LeandroSantosGit/curso-javascript-ninja).
 
 ## Web
-Na aplicação o cliente poderá inserir o veículo preenchendo os campos na área de `Cadastro`, os veículos cadastrados são listados logo abaixo na área de `Carros`, podendo ser excluído.
+Na aplicação o cliente poderá inserir o veículo preenchendo os campos na área de `Cadastro`. Os veículos cadastrados são listados logo abaixo na área de `Carros`, podendo ser excluído.
 
 <img src=".github/web.png" alt="Página Santos Metal Car" align="center">
 
