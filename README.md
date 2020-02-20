@@ -6,7 +6,7 @@
 
 Santos Metal Car é um projeto que visa conectar clientes que buscam disponibilizar seus veículos para venda em plataforma online, cadastrando informações de seu automóvel e conectando clientes que procuram obter informações de veiculos como imagem e preço com maior facilidade e acessibilidade, facilitando compra e venda.
 
-O projeto visa construir uma aplicação na prática,utilizando Javascript como pricipal ferramenta e Bootstrap focando responsividade.
+O projeto visa construir uma aplicação na prática, utilizando Javascript como pricipal ferramenta e Bootstrap focando na responsividade.
 
 O projeto foi desenvolvido no final do Curso [Javascript Ninja](https://blog.da2k.com.br/curso-javascript-ninja/), colocam em prática todo o conhecimento adquirido no curso e um pouco a mais. Repositório do Curso [Javascript Ninja](https://github.com/LeandroSantosGit/curso-javascript-ninja).
 
